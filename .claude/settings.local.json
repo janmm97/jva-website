@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"For Website \\(1\\).docx\" -o /tmp/website_doc.md)",
+      "Read(//tmp/**)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}
