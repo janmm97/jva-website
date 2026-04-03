@@ -1,12 +1,13 @@
 /* ═══════════════════════════════════════════════════════════════
-   MAIN.JS — Portfolio interactions
+   MAIN.JS — Jan's Portfolio
    ═══════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
-  /* ────────────── THEME TOGGLE ────────────── */
   const html = document.documentElement;
+
+  /* ────────────── THEME TOGGLE ────────────── */
   const toggle = document.getElementById('themeToggle');
   const saved = localStorage.getItem('theme');
   if (saved) html.setAttribute('data-theme', saved);
@@ -15,16 +16,13 @@
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    // Reinit dots for new color
     initDots();
   });
 
   /* ────────────── HEADER SCROLL ────────────── */
   const header = document.getElementById('header');
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
-    lastScroll = window.scrollY;
   }, { passive: true });
 
   /* ────────────── MOBILE NAV ────────────── */
@@ -44,6 +42,45 @@
       document.body.style.overflow = '';
     });
   });
+
+  /* ────────────── TYPEWRITER ────────────── */
+  const typewriterEl = document.getElementById('typewriter');
+  const roles = [
+    'Virtual Assistant',
+    'Operations Assistant',
+    'Automation Specialist',
+    'AI Agent Developer',
+    'All-Rounder'
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function typewrite() {
+    const current = roles[roleIndex];
+
+    if (!isDeleting) {
+      typewriterEl.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === current.length) {
+        isDeleting = true;
+        setTimeout(typewrite, 2000); // pause before deleting
+        return;
+      }
+      setTimeout(typewrite, 70);
+    } else {
+      typewriterEl.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typewrite, 400);
+        return;
+      }
+      setTimeout(typewrite, 40);
+    }
+  }
+  typewrite();
 
   /* ────────────── HERO CURSOR GLOW ────────────── */
   const heroEl = document.getElementById('hero');
@@ -141,7 +178,6 @@
 
   /* ────────────── PARALLAX ────────────── */
   const parallaxEls = document.querySelectorAll('[data-parallax]');
-
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     parallaxEls.forEach(el => {
@@ -155,81 +191,96 @@
   const logoCount = 25;
   let logoHTML = '';
   for (let i = 1; i <= logoCount; i++) {
-    logoHTML += `<div class="carousel__item"><img src="assets/tools logo/techstack logos/${i}.png" alt="Tech ${i}" loading="lazy"></div>`;
+    logoHTML += `<div class="carousel__item"><img src="assets/tools logo/techstack logos/${i}.png" alt="Tool ${i}" loading="lazy"></div>`;
   }
-  // Duplicate for infinite loop
-  carousel.innerHTML = logoHTML + logoHTML;
+  carousel.innerHTML = logoHTML + logoHTML; // duplicate for infinite loop
 
-  /* ────────────── PROJECT CARDS ────────────── */
-  const projectsData = [
-    // Card-based projects
-    { title: 'Project Alpha', desc: 'An AI-powered solution for intelligent task management and workflow optimization.', img: 'assets/images for card/card images/1.png', category: 'ai', badge: 'AI / GPT' },
-    { title: 'Project Beta', desc: 'Smart content generation and analysis using advanced language models.', img: 'assets/images for card/card images/2.png', category: 'ai', badge: 'AI / GPT' },
-    { title: 'Project Gamma', desc: 'Automated data pipeline with intelligent routing and processing.', img: 'assets/images for card/card images/3.png', category: 'ai', badge: 'AI / GPT' },
-    // n8n projects
-    { title: 'Content Generator', desc: 'Automated content creation pipeline using n8n workflows with AI integration.', img: 'assets/n8n projects/Content Generator.png', category: 'n8n', badge: 'n8n' },
-    { title: 'Deal Flow Checker', desc: 'Automated deal screening and validation workflow for efficient pipeline management.', img: 'assets/n8n projects/Deal Flow Checker.png', category: 'n8n', badge: 'n8n' },
-    { title: 'Events Review', desc: 'Intelligent event monitoring and review automation workflow.', img: 'assets/n8n projects/Events Review IMG.png', category: 'n8n', badge: 'n8n' },
-    // Claude Code Agent projects (videos)
-    { title: 'Calendar Assistant', desc: 'AI-powered calendar management agent built with Claude Code.', video: 'assets/Claude Code Agents/Calendar Assistant.mp4', category: 'claude', badge: 'Claude Code' },
-    { title: 'Email Assistant', desc: 'Intelligent email drafting and management agent powered by Claude.', video: 'assets/Claude Code Agents/Email Assistant.mp4', category: 'claude', badge: 'Claude Code' },
-  ];
+  /* ────────────── VIDEO PLAY/PAUSE ────────────── */
+  document.querySelectorAll('.detail-card__media--video').forEach(mediaEl => {
+    const video = mediaEl.querySelector('video');
+    const overlay = mediaEl.querySelector('.play-overlay');
 
-  const grid = document.getElementById('projectsGrid');
-
-  function renderProjects(filter) {
-    const filtered = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
-    grid.innerHTML = '';
-
-    filtered.forEach((p, i) => {
-      const card = document.createElement('div');
-      card.className = 'project-card reveal';
-      card.style.transitionDelay = `${i * 0.08}s`;
-
-      let mediaHTML;
-      if (p.video) {
-        mediaHTML = `<video src="${p.video}" muted loop playsinline preload="metadata"></video>`;
+    mediaEl.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        overlay.classList.add('hidden');
       } else {
-        mediaHTML = `<img src="${p.img}" alt="${p.title}" loading="lazy">`;
+        video.pause();
+        overlay.classList.remove('hidden');
       }
-
-      card.innerHTML = `
-        <div class="project-card__media">
-          ${mediaHTML}
-          <span class="project-card__badge">${p.badge}</span>
-        </div>
-        <div class="project-card__body">
-          <h3 class="project-card__title">${p.title}</h3>
-          <p class="project-card__desc">${p.desc}</p>
-        </div>
-      `;
-
-      // Play video on hover
-      if (p.video) {
-        const vid = card.querySelector('video');
-        card.addEventListener('mouseenter', () => vid.play());
-        card.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; });
-      }
-
-      grid.appendChild(card);
     });
 
-    // Re-observe for reveal
-    requestAnimationFrame(() => {
-      grid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    });
-  }
-
-  // Tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      renderProjects(tab.dataset.tab);
+    video.addEventListener('ended', () => {
+      overlay.classList.remove('hidden');
     });
   });
 
-  renderProjects('all');
+  /* ────────────── MATH CAPTCHA ────────────── */
+  let captchaAnswer = 0;
+  const captchaQ = document.getElementById('captchaQuestion');
+
+  function generateCaptcha() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    captchaAnswer = a + b;
+    captchaQ.textContent = `What is ${a} + ${b}?`;
+  }
+  generateCaptcha();
+
+  /* ────────────── CONTACT FORM → GOOGLE SHEETS ────────────── */
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+
+  // Google Apps Script Web App URL — replace with your deployed script URL
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validate captcha
+    const captchaInput = parseInt(document.getElementById('captcha').value, 10);
+    if (captchaInput !== captchaAnswer) {
+      statusEl.textContent = 'Incorrect answer. Please try again.';
+      statusEl.className = 'form-status error';
+      generateCaptcha();
+      document.getElementById('captcha').value = '';
+      return;
+    }
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = 'Sending...';
+
+    const data = {
+      firstName: form.firstName.value,
+      lastName: form.lastName.value,
+      email: form.email.value,
+      company: form.company.value,
+      website: form.website.value,
+      message: form.message.value,
+      timestamp: new Date().toISOString(),
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      statusEl.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+      statusEl.className = 'form-status success';
+      form.reset();
+      generateCaptcha();
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please email me directly.';
+      statusEl.className = 'form-status error';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.querySelector('span').textContent = 'Send Message';
+  });
 
   /* ────────────── SCROLL REVEAL ────────────── */
   const revealObserver = new IntersectionObserver((entries) => {
@@ -241,48 +292,22 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  // Add .reveal to sections
-  document.querySelectorAll('.section-label, .section-title, .about__grid, .resume__content, .contact__sub, .contact__links, .carousel-wrap, .projects__tabs').forEach(el => {
+  document.querySelectorAll('.section-label, .section-title, .about__layout, .about__agent-cta, .showcase, .detail-card, .resume__content, .contact__sub, .contact-form, .contact__links, .carousel-wrap, .claude-cta, .footer__grid').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
   });
-
-  /* ────────────── COUNT-UP ANIMATION ────────────── */
-  const countEls = document.querySelectorAll('[data-count]');
-  const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.count, 10);
-        let current = 0;
-        const step = Math.max(1, Math.floor(target / 40));
-        const interval = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(interval);
-          }
-          el.textContent = current;
-        }, 30);
-        countObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  countEls.forEach(el => countObserver.observe(el));
 
   /* ────────────── GSAP HERO ENTRANCE ────────────── */
   if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero__label', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 })
-      .from('.hero__title', { opacity: 0, y: 50, duration: 1 }, '-=0.5')
-      .from('.hero__sub', { opacity: 0, y: 30, duration: 0.8 }, '-=0.6')
-      .from('.hero__cta', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-      .from('.hero__scroll-hint', { opacity: 0, duration: 0.8 }, '-=0.3');
+    tl.from('.hero__wave', { opacity: 0, y: 30, duration: 0.7, delay: 0.2 })
+      .from('.hero__title', { opacity: 0, y: 50, duration: 0.9 }, '-=0.4')
+      .from('.hero__availability', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+      .from('.hero__buttons', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+      .from('.hero__scroll-hint', { opacity: 0, duration: 0.6 }, '-=0.2');
 
-    // Fade hero on scroll
     gsap.to('.hero__content', {
       scrollTrigger: {
         trigger: '.hero',
