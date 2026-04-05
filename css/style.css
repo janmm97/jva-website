@@ -646,6 +646,43 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   PAGE HERO (subpages)
+   ═══════════════════════════════════════════════════════════════ */
+
+.page-hero {
+  padding: 140px 0 60px;
+  background: var(--bg-primary);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-bottom: 32px;
+  transition: color 0.3s;
+}
+.back-link:hover {
+  color: var(--accent);
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.page-hero__sub {
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    PROJECT DETAIL PAGES
    ═══════════════════════════════════════════════════════════════ */
 
