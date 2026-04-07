@@ -302,11 +302,12 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero__wave', { opacity: 0, y: 30, duration: 0.7, delay: 0.2 })
-      .from('.hero__title', { opacity: 0, y: 50, duration: 0.9 }, '-=0.4')
-      .from('.hero__availability', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-      .from('.hero__buttons', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-      .from('.hero__scroll-hint', { opacity: 0, duration: 0.6 }, '-=0.2');
+    tl.from('.hero__wave', { opacity: 0, y: 24, duration: 0.7, delay: 0.2 })
+      .from('.hero__title', { opacity: 0, y: 56, duration: 1.0 }, '-=0.4')
+      .from('.hero__availability', { opacity: 0, y: 18, duration: 0.6 }, '-=0.4')
+      .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.3')
+      .from('.hero__stats', { opacity: 0, y: 14, duration: 0.6 }, '-=0.2')
+      .from('.hero__scroll-hint', { opacity: 0, duration: 0.6 }, '-=0.3');
 
     gsap.to('.hero__content', {
       scrollTrigger: {

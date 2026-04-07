@@ -7,7 +7,7 @@
   <meta name="description" content="Jan — Executive Virtual Assistant focused on operations, systems, and efficiency. Building AI agents and automated workflows that help businesses scale smarter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,7 +43,8 @@
     <div class="hero__bloom"></div>
 
     <div class="hero__content" id="heroContent">
-      <p class="hero__wave" data-parallax="0.12">Hey there! <span class="wave-emoji">👋</span></p>
+      <p class="hero__wave" data-parallax="0.12">AI Developer &amp; Virtual Assistant</p>
+
       <h1 class="hero__title" data-parallax="0.06">
         I'm Jan, Your<br>
         <span class="typewriter-wrap">
@@ -59,12 +60,27 @@
 
       <div class="hero__buttons" data-parallax="0.15">
         <a href="#contact" class="btn btn--primary">
-          <span>Get in touch</span>
+          <span>Start a project</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#resume" class="btn btn--outline">
-          <span>View CV</span>
+        <a href="#about" class="btn btn--outline">
+          <span>Learn more</span>
         </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">AI</span>
+          <span class="hero__stat-label">Agent Developer</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">n8n</span>
+          <span class="hero__stat-label">Automation Expert</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">VA</span>
+          <span class="hero__stat-label">Executive Operations</span>
+        </div>
       </div>
     </div>
 
@@ -94,18 +110,29 @@
           <p class="about__subhook">I'm an Executive Virtual Assistant focused on operations, systems, and efficiency. Alongside my core skills, I now build AI agents and automated workflows that help businesses reduce manual work and scale smarter.</p>
         </div>
         <div class="about__right">
-          <div class="about__agent-embed">
-            <div class="agent-embed__placeholder">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M7 13h4"/><path d="M7 17h8"/><circle cx="16" cy="8" r="2"/></svg>
-              <p>AI Agent Coming Soon</p>
-              <span>Ask me anything about Jan</span>
+          <div class="about__stats">
+            <div class="about__stat-item">
+              <span class="about__stat-num">n8n</span>
+              <span class="about__stat-label">Workflow Automation</span>
+            </div>
+            <div class="about__stat-item">
+              <span class="about__stat-num">AI</span>
+              <span class="about__stat-label">Agent Architecture</span>
+            </div>
+            <div class="about__stat-item">
+              <span class="about__stat-num">VA</span>
+              <span class="about__stat-label">Executive Assistance</span>
+            </div>
+            <div class="about__stat-item">
+              <span class="about__stat-num">∞</span>
+              <span class="about__stat-label">Hours Saved</span>
             </div>
           </div>
         </div>
       </div>
       <div class="about__agent-cta">
         <a href="#contact" class="btn btn--outline btn--sm">
-          <span>Want Your Own AI Agent that doesn't hallucinate? Visit Here</span>
+          <span>Want an AI Agent that actually works? Let's talk</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
@@ -157,6 +184,19 @@
             <a href="#contact" class="btn btn--outline btn--sm">View Projects</a>
           </div>
         </div>
+
+        <!-- Card 4 — Ad-Hoc Tasks -->
+        <div class="showcase__card" data-category="adhoc">
+          <div class="showcase__img">
+            <img src="assets/images for card/card images/4.png" alt="Ad-Hoc VA Tasks" loading="lazy">
+          </div>
+          <div class="showcase__body">
+            <span class="showcase__badge">Ad-Hoc</span>
+            <h3 class="showcase__title">Ad-Hoc Tasks</h3>
+            <p class="showcase__desc">Flexible, on-demand support for whatever your business needs — research, data entry, scheduling, coordination, and anything in between. Fast, reliable, and done right.</p>
+            <a href="#contact" class="btn btn--outline btn--sm">Get in Touch</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -195,70 +235,79 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ CONTACT FORM ═══════════════════════ -->
+  <!-- ═══════════════════════ CONTACT FORM — SPLIT LAYOUT ═══════════════════════ -->
   <section class="section contact" id="contact">
     <div class="container">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Let's work together</h2>
-      <p class="contact__sub">Have a project in mind? Fill out the form below and I'll get back to you.</p>
+      <div class="contact__grid">
 
-      <form class="contact-form" id="contactForm" autocomplete="on">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name <span class="req">*</span></label>
-            <input type="text" id="firstName" name="firstName" required>
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name <span class="req">*</span></label>
-            <input type="text" id="lastName" name="lastName" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company">
-          </div>
-          <div class="form-group">
-            <label for="website">Company Website</label>
-            <input type="url" id="website" name="website" placeholder="https://">
+        <!-- Left: info -->
+        <div class="contact__info">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">Let's work<br>together</h2>
+          <p class="contact__sub">Have a project in mind? Fill out the form and I'll get back to you within 24 hours.</p>
+          <div class="contact__links">
+            <a href="mailto:janmm.va@gmail.com" class="contact__link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>janmm.va@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" class="contact__link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/janmm97" target="_blank" class="contact__link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>GitHub</span>
+            </a>
           </div>
         </div>
-        <div class="form-group">
-          <label for="message">Tell Me More About Your Project <span class="req">*</span></label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+
+        <!-- Right: form -->
+        <div class="contact__form-wrap">
+          <form class="contact-form" id="contactForm" autocomplete="on">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+              </div>
+              <div class="form-group">
+                <label for="website">Company Website</label>
+                <input type="url" id="website" name="website" placeholder="https://">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Me More About Your Project <span class="req">*</span></label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <!-- Math CAPTCHA -->
+            <div class="form-group captcha-group">
+              <label for="captcha">Quick check: <strong id="captchaQuestion"></strong> <span class="req">*</span></label>
+              <input type="number" id="captcha" name="captcha" required autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+
+            <p class="form-status" id="formStatus"></p>
+          </form>
         </div>
 
-        <!-- Math CAPTCHA -->
-        <div class="form-group captcha-group">
-          <label for="captcha">Quick check: <strong id="captchaQuestion"></strong> <span class="req">*</span></label>
-          <input type="number" id="captcha" name="captcha" required autocomplete="off">
-        </div>
-
-        <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-          <span>Send Message</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
-
-        <p class="form-status" id="formStatus"></p>
-      </form>
-
-      <div class="contact__links">
-        <a href="mailto:janmm.va@gmail.com" class="contact__link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>janmm.va@gmail.com</span>
-        </a>
-        <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" class="contact__link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/janmm97" target="_blank" class="contact__link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          <span>GitHub</span>
-        </a>
       </div>
     </div>
   </section>
@@ -267,23 +316,25 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
+        <div class="footer__col footer__col-brand">
+          <span class="footer__logo">Jan<span class="logo-dot">.</span></span>
+          <p>AI Developer &amp; Virtual Assistant building intelligent systems that help businesses scale smarter.</p>
+        </div>
         <div class="footer__col">
           <h4>Navigate</h4>
           <a href="#about">About</a>
-          <a href="#resume">View CV / Resume</a>
-          <a href="#">Blog Articles</a>
+          <a href="#resume">CV / Resume</a>
+          <a href="#projects">Projects</a>
         </div>
         <div class="footer__col">
-          <h4>Services</h4>
-          <a href="#">Pricing</a>
-          <a href="#">Services</a>
-          <a href="#">Client Reviews</a>
+          <h4>Connect</h4>
+          <a href="mailto:janmm.va@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/manalojanm/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/janmm97" target="_blank">GitHub</a>
         </div>
-        <div class="footer__col">
-          <h4>Legal</h4>
-          <p>&copy; 2026 Jan. All rights reserved.</p>
-          <a href="#">Privacy Policy</a>
-        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Jan. All rights reserved.</span>
       </div>
     </div>
   </footer>
