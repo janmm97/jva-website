@@ -232,7 +232,7 @@
   const statusEl = document.getElementById('formStatus');
 
   // Google Apps Script Web App URL — replace with your deployed script URL
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpTkT4h0sT6uSyi86ruxfO0ya-N929WX5zoPbaibAStEwc3wEUdd1LnA3ZmDWvl8b9/exec';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
