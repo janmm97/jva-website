@@ -251,7 +251,7 @@
     submitBtn.disabled = true;
     submitBtn.querySelector('span').textContent = 'Sending...';
 
-    const params = new URLSearchParams({
+    const query = new URLSearchParams({
       firstName: form.firstName.value,
       lastName:  form.lastName.value,
       email:     form.email.value,
@@ -262,10 +262,9 @@
     });
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
+      await fetch(`${GOOGLE_SCRIPT_URL}?${query}`, {
+        method: 'GET',
         mode: 'no-cors',
-        body: params,
       });
 
       statusEl.textContent = 'Message sent successfully! I\'ll get back to you soon.';
