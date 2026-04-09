@@ -251,22 +251,21 @@
     submitBtn.disabled = true;
     submitBtn.querySelector('span').textContent = 'Sending...';
 
-    const data = {
+    const params = new URLSearchParams({
       firstName: form.firstName.value,
-      lastName: form.lastName.value,
-      email: form.email.value,
-      company: form.company.value,
-      website: form.website.value,
-      message: form.message.value,
+      lastName:  form.lastName.value,
+      email:     form.email.value,
+      company:   form.company.value,
+      website:   form.website.value,
+      message:   form.message.value,
       timestamp: new Date().toISOString(),
-    };
+    });
 
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: params,
       });
 
       statusEl.textContent = 'Message sent successfully! I\'ll get back to you soon.';

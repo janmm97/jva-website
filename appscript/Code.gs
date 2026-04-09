@@ -45,19 +45,19 @@ function formatTimestamp(isoString) {
 
 function doPost(e) {
   try {
-    var raw  = e.postData && e.postData.contents ? e.postData.contents : '{}';
-    var data = JSON.parse(raw);
+    // Data arrives as application/x-www-form-urlencoded — read via e.parameter
+    var p = e.parameter || {};
 
     var sheet = getTargetSheet();
 
     sheet.appendRow([
-      formatTimestamp(data.timestamp),   // Timestamp
-      data.firstName  || '',             // First Name
-      data.lastName   || '',             // Last Name
-      data.email      || '',             // Email Address
-      data.company    || '',             // Company
-      data.website    || '',             // Company Website
-      data.message    || ''              // Tell Me About Your Project
+      formatTimestamp(p.timestamp),   // Timestamp
+      p.firstName  || '',             // First Name
+      p.lastName   || '',             // Last Name
+      p.email      || '',             // Email Address
+      p.company    || '',             // Company
+      p.website    || '',             // Company Website
+      p.message    || ''              // Tell Me About Your Project
     ]);
 
     return ContentService
