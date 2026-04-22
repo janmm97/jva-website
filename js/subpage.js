@@ -12,10 +12,19 @@
   const saved = localStorage.getItem('theme');
   if (saved) html.setAttribute('data-theme', saved);
 
+  function applyLogoTheme(theme) {
+    const src = theme === 'dark'
+      ? 'assets/logo/logo-white.svg'
+      : 'assets/logo/logo-black.svg';
+    document.querySelectorAll('.logo-img').forEach(img => { img.src = src; });
+  }
+  applyLogoTheme(html.getAttribute('data-theme') || 'dark');
+
   toggle.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    applyLogoTheme(next);
   });
 
   /* ────────────── HEADER SCROLL ────────────── */

@@ -12,10 +12,19 @@
   const saved = localStorage.getItem('theme');
   if (saved) html.setAttribute('data-theme', saved);
 
+  function applyLogoTheme(theme) {
+    const src = theme === 'dark'
+      ? 'assets/logo/logo-white.svg'
+      : 'assets/logo/logo-black.svg';
+    document.querySelectorAll('.logo-img').forEach(img => { img.src = src; });
+  }
+  applyLogoTheme(html.getAttribute('data-theme') || 'dark');
+
   toggle.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    applyLogoTheme(next);
     initDots();
   });
 
@@ -42,45 +51,6 @@
       document.body.style.overflow = '';
     });
   });
-
-  /* ────────────── TYPEWRITER ────────────── */
-  const typewriterEl = document.getElementById('typewriter');
-  const roles = [
-    'Virtual Assistant',
-    'Operations Assistant',
-    'Automation Specialist',
-    'AI Agent Developer',
-    'All-Rounder'
-  ];
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function typewrite() {
-    const current = roles[roleIndex];
-
-    if (!isDeleting) {
-      typewriterEl.textContent = current.substring(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) {
-        isDeleting = true;
-        setTimeout(typewrite, 2000); // pause before deleting
-        return;
-      }
-      setTimeout(typewrite, 70);
-    } else {
-      typewriterEl.textContent = current.substring(0, charIndex - 1);
-      charIndex--;
-      if (charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typewrite, 400);
-        return;
-      }
-      setTimeout(typewrite, 40);
-    }
-  }
-  typewrite();
 
   /* ────────────── HERO CURSOR GLOW ────────────── */
   const heroEl = document.getElementById('hero');
@@ -300,12 +270,12 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero__wave', { opacity: 0, y: 24, duration: 0.7, delay: 0.2 })
-      .from('.hero__title', { opacity: 0, y: 56, duration: 1.0 }, '-=0.4')
-      .from('.hero__availability', { opacity: 0, y: 18, duration: 0.6 }, '-=0.4')
-      .from('.hero__buttons', { opacity: 0, y: 18, duration: 0.6 }, '-=0.3')
-      .from('.hero__stats', { opacity: 0, y: 14, duration: 0.6 }, '-=0.2')
-      .from('.hero__scroll-hint', { opacity: 0, duration: 0.6 }, '-=0.3');
+    tl.from('.hero__wave',   { opacity: 0, y: 20, duration: 0.6, delay: 0.15 })
+      .from('.hero__title',  { opacity: 0, y: 48, duration: 1.0 }, '-=0.35')
+      .from('.hero__desc',   { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+      .from('.hero__buttons',{ opacity: 0, y: 16, duration: 0.5 }, '-=0.3')
+      .from('.hero__right',  { opacity: 0, x: 24, duration: 0.7 }, '-=0.6')
+      .from('.hero__scroll-hint', { opacity: 0, duration: 0.5 }, '-=0.2');
 
     gsap.to('.hero__content', {
       scrollTrigger: {
@@ -317,6 +287,12 @@
       opacity: 0,
       y: -60,
     });
+  }
+
+  /* ────────────── REVIEWS CAROUSEL ────────────── */
+  const reviewsTrack = document.getElementById('reviewsTrack');
+  if (reviewsTrack) {
+    reviewsTrack.innerHTML += reviewsTrack.innerHTML; // duplicate for seamless loop
   }
 
   /* ────────────── SMOOTH ANCHOR SCROLL ────────────── */

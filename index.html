@@ -15,7 +15,9 @@
   <!-- ═══════════════════════ HEADER ═══════════════════════ -->
   <header class="header" id="header">
     <div class="header__inner">
-      <a href="#" class="header__logo">Jan<span class="logo-dot">.</span></a>
+      <a href="index.html" class="header__logo">
+        <img class="logo-img header__logo-img" src="assets/logo/logo-white.svg" alt="Jan.">
+      </a>
       <nav class="header__nav" id="nav">
         <a href="#about" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
@@ -43,45 +45,54 @@
     <div class="hero__bloom"></div>
 
     <div class="hero__content" id="heroContent">
-      <p class="hero__wave" data-parallax="0.12">AI Developer &amp; Virtual Assistant</p>
 
-      <h1 class="hero__title" data-parallax="0.06">
-        I'm Jan, Your<br>
-        <span class="typewriter-wrap">
-          <span class="typewriter" id="typewriter"></span>
-          <span class="typewriter-cursor">|</span>
-        </span>
-      </h1>
+      <!-- Left: copy -->
+      <div class="hero__left">
+        <p class="hero__wave">AI Developer &amp; Virtual Assistant</p>
 
-      <div class="hero__availability" id="availabilityBadge">
-        <span class="availability-dot"></span>
-        <span class="availability-text">Available Full-Time</span>
-      </div>
+        <h1 class="hero__title">
+          Your business,<br>
+          <span class="hero__title-em">running without you.</span>
+        </h1>
 
-      <div class="hero__buttons" data-parallax="0.15">
-        <a href="#contact" class="btn btn--primary">
-          <span>Start a project</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="#about" class="btn btn--outline">
-          <span>Learn more</span>
-        </a>
-      </div>
+        <p class="hero__desc">I build AI agents, automate workflows, and run operations end-to-end so founders and teams can focus on growth instead of admin.</p>
 
-      <div class="hero__stats">
-        <div class="hero__stat">
-          <span class="hero__stat-num">AI</span>
-          <span class="hero__stat-label">Agent Developer</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-num">n8n</span>
-          <span class="hero__stat-label">Automation Expert</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-num">VA</span>
-          <span class="hero__stat-label">Executive Operations</span>
+        <div class="hero__buttons">
+          <a href="#contact" class="btn btn--primary">
+            <span>Start a project</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#about" class="btn btn--outline">
+            <span>Learn more</span>
+          </a>
         </div>
       </div>
+
+      <!-- Right: credentials card -->
+      <div class="hero__right">
+        <div class="hero__availability" id="availabilityBadge">
+          <span class="availability-dot"></span>
+          <span class="availability-text">Available Full-Time</span>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-num">AI</span>
+            <span class="hero__stat-label">Agent Development</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">n8n</span>
+            <span class="hero__stat-label">Workflow Automation</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">VA</span>
+            <span class="hero__stat-label">Executive Operations</span>
+          </div>
+        </div>
+
+        <p class="hero__card-note">Based in the Philippines &middot; Works globally</p>
+      </div>
+
     </div>
 
     <div class="hero__scroll-hint">
@@ -235,6 +246,86 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════ REVIEWS CAROUSEL ═══════════════════════ -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <p class="section-label">Testimonials</p>
+      <h2 class="section-title">What clients say</h2>
+    </div>
+
+    <div class="reviews__outer">
+      <div class="reviews__track" id="reviewsTrack">
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Honestly Jan just gets it. He took care of our guests like they were his own, kept the customer list clean and updated, and handled rescheduling and tour coordination without us ever having to follow up. Our guests noticed. We noticed. He's just one of those people you're glad you found.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">GW</div>
+            <div>
+              <p class="reviews__name">George W.</p>
+              <p class="reviews__role">Tour Operations Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Jan sorted our content scheduling and built outreach sequences that were actually converting. We're talking 70 to 80 percent of cold emails turning into real meetings. He also built us an n8n and Zapier automation that completely changed how we review deals. We get back somewhere between 10 and 20 hours a week from that alone. He knew what he was doing and he delivered.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">AG</div>
+            <div>
+              <p class="reviews__name">Andy G.</p>
+              <p class="reviews__role">CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Working with Jan was refreshingly easy. He picks things up fast, asks the right questions, and just handles things. No micromanaging needed, no chasing him down. He brought a calm and organised energy to the team that made everything run better.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">GC</div>
+            <div>
+              <p class="reviews__name">George C.</p>
+              <p class="reviews__role">Small Business Owner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Jan helped me find and vet the right people to build my site, which saved me from making some expensive hires I would have regretted. He also sat with me and actually taught me how to use AI tools properly. Perplexity, GPT, prompting. I use them daily now and that's genuinely down to him.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">CS</div>
+            <div>
+              <p class="reviews__name">Callum S.</p>
+              <p class="reviews__role">Founder</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Jan basically ran our Shopify stores. SOPs, customer service, disputes, supplier convos, manufacturer back and forth. He won cases I thought were gone. Handled things I didn't even know needed handling. Across multiple stores. I don't know how he kept it all together but he did, every time.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">FG</div>
+            <div>
+              <p class="reviews__name">Felix G.</p>
+              <p class="reviews__role">E-commerce Operator</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__card">
+          <p class="reviews__quote">&ldquo;Jan led a team of ten and kept everything moving. No tickets slipping through, disputes handled, social content going out, product updates communicated. He reported directly to me and his updates were always clear and on point. Exactly what you need from someone running the ground floor of your operation.&rdquo;</p>
+          <div class="reviews__author">
+            <div class="reviews__avatar">MT</div>
+            <div>
+              <p class="reviews__name">Mike T.</p>
+              <p class="reviews__role">COO</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════ CONTACT FORM — SPLIT LAYOUT ═══════════════════════ -->
   <section class="section contact" id="contact">
     <div class="container">
@@ -317,7 +408,9 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__col footer__col-brand">
-          <span class="footer__logo">Jan<span class="logo-dot">.</span></span>
+          <a href="index.html" class="footer__logo-link">
+            <img class="logo-img footer__logo-img" src="assets/logo/logo-white.svg" alt="Jan.">
+          </a>
           <p>AI Developer &amp; Virtual Assistant building intelligent systems that help businesses scale smarter.</p>
         </div>
         <div class="footer__col">
@@ -325,16 +418,24 @@
           <a href="#about">About</a>
           <a href="#resume">CV / Resume</a>
           <a href="#projects">Projects</a>
+          <a href="#">Blog</a>
         </div>
         <div class="footer__col">
-          <h4>Connect</h4>
+          <h4>Connect &amp; Follow</h4>
           <a href="mailto:janmm.va@gmail.com">Email</a>
+          <a href="#" target="_blank">Follow me on X</a>
+          <a href="#" target="_blank">Follow me on Instagram</a>
+          <a href="#" target="_blank">Follow me on Facebook</a>
           <a href="https://www.linkedin.com/in/manalojanm/" target="_blank">LinkedIn</a>
           <a href="https://github.com/janmm97" target="_blank">GitHub</a>
         </div>
       </div>
       <div class="footer__bottom">
         <span class="footer__copy">&copy; 2026 Jan. All rights reserved.</span>
+        <a href="#" class="footer__reelx" target="_blank">
+          Check out ReelX
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
     </div>
   </footer>
