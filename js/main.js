@@ -56,95 +56,102 @@
   const heroEl = document.getElementById('hero');
   const glow = document.getElementById('heroGlow');
 
-  heroEl.addEventListener('mousemove', (e) => {
-    glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-    glow.classList.add('active');
-  });
+  if (heroEl && glow) {
+    heroEl.addEventListener('mousemove', (e) => {
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      glow.classList.add('active');
+    });
 
-  heroEl.addEventListener('mouseleave', () => {
-    glow.classList.remove('active');
-  });
+    heroEl.addEventListener('mouseleave', () => {
+      glow.classList.remove('active');
+    });
+  }
 
   /* ────────────── DOTTED CANVAS ────────────── */
   const canvas = document.getElementById('dotCanvas');
-  const ctx = canvas.getContext('2d');
-  let dots = [];
-  let mouse = { x: -9999, y: -9999 };
-  const DOT_SPACING = 32;
-  const DOT_RADIUS = 1.2;
-  const INTERACTION_RADIUS = 120;
 
-  function initDots() {
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = canvas.offsetWidth * dpr;
-    canvas.height = canvas.offsetHeight * dpr;
-    ctx.scale(dpr, dpr);
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let dots = [];
+    let mouse = { x: -9999, y: -9999 };
+    const DOT_SPACING = 32;
+    const DOT_RADIUS = 1.2;
+    const INTERACTION_RADIUS = 120;
 
-    dots = [];
-    const cols = Math.ceil(canvas.offsetWidth / DOT_SPACING) + 1;
-    const rows = Math.ceil(canvas.offsetHeight / DOT_SPACING) + 1;
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        dots.push({
-          ox: c * DOT_SPACING,
-          oy: r * DOT_SPACING,
-          x: c * DOT_SPACING,
-          y: r * DOT_SPACING,
-        });
+    function initDots() {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.scale(dpr, dpr);
+
+      dots = [];
+      const cols = Math.ceil(canvas.offsetWidth / DOT_SPACING) + 1;
+      const rows = Math.ceil(canvas.offsetHeight / DOT_SPACING) + 1;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          dots.push({
+            ox: c * DOT_SPACING,
+            oy: r * DOT_SPACING,
+            x: c * DOT_SPACING,
+            y: r * DOT_SPACING,
+          });
+        }
       }
     }
-  }
 
-  function drawDots() {
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
-    ctx.clearRect(0, 0, w, h);
+    function drawDots() {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
 
-    const style = getComputedStyle(html);
-    const dotColor = style.getPropertyValue('--dot-color').trim();
+      const style = getComputedStyle(html);
+      const dotColor = style.getPropertyValue('--dot-color').trim();
 
-    for (let i = 0; i < dots.length; i++) {
-      const d = dots[i];
-      const dx = mouse.x - d.ox;
-      const dy = mouse.y - d.oy;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      for (let i = 0; i < dots.length; i++) {
+        const d = dots[i];
+        const dx = mouse.x - d.ox;
+        const dy = mouse.y - d.oy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < INTERACTION_RADIUS) {
-        const force = (1 - dist / INTERACTION_RADIUS) * 14;
-        const angle = Math.atan2(dy, dx);
-        d.x = d.ox - Math.cos(angle) * force;
-        d.y = d.oy - Math.sin(angle) * force;
-      } else {
-        d.x += (d.ox - d.x) * 0.1;
-        d.y += (d.oy - d.y) * 0.1;
+        if (dist < INTERACTION_RADIUS) {
+          const force = (1 - dist / INTERACTION_RADIUS) * 14;
+          const angle = Math.atan2(dy, dx);
+          d.x = d.ox - Math.cos(angle) * force;
+          d.y = d.oy - Math.sin(angle) * force;
+        } else {
+          d.x += (d.ox - d.x) * 0.1;
+          d.y += (d.oy - d.y) * 0.1;
+        }
+
+        const alpha = dist < INTERACTION_RADIUS ? 0.4 + (1 - dist / INTERACTION_RADIUS) * 0.6 : 0.18;
+        const radius = dist < INTERACTION_RADIUS ? DOT_RADIUS + (1 - dist / INTERACTION_RADIUS) * 1.5 : DOT_RADIUS;
+
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = dotColor.replace(/[\d.]+\)$/, alpha + ')');
+        ctx.fill();
       }
 
-      const alpha = dist < INTERACTION_RADIUS ? 0.4 + (1 - dist / INTERACTION_RADIUS) * 0.6 : 0.18;
-      const radius = dist < INTERACTION_RADIUS ? DOT_RADIUS + (1 - dist / INTERACTION_RADIUS) * 1.5 : DOT_RADIUS;
-
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = dotColor.replace(/[\d.]+\)$/, alpha + ')');
-      ctx.fill();
+      requestAnimationFrame(drawDots);
     }
 
-    requestAnimationFrame(drawDots);
+    if (heroEl) {
+      heroEl.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      heroEl.addEventListener('mouseleave', () => {
+        mouse.x = -9999;
+        mouse.y = -9999;
+      });
+    }
+
+    window.addEventListener('resize', initDots);
+    initDots();
+    drawDots();
   }
-
-  heroEl.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-
-  heroEl.addEventListener('mouseleave', () => {
-    mouse.x = -9999;
-    mouse.y = -9999;
-  });
-
-  window.addEventListener('resize', initDots);
-  initDots();
-  drawDots();
 
   /* ────────────── PARALLAX ────────────── */
   const parallaxEls = document.querySelectorAll('[data-parallax]');
@@ -260,7 +267,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.section-label, .section-title, .about__layout, .about__agent-cta, .showcase, .detail-card, .resume__content, .contact__sub, .contact-form, .contact__links, .carousel-wrap, .claude-cta, .footer__grid').forEach(el => {
+  document.querySelectorAll('.section-label, .section-title, .about__layout, .about__agent-cta, .bento, .detail-card, .resume__content, .contact__sub, .contact-form, .contact__links, .carousel-wrap, .claude-cta, .footer__grid').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
   });
@@ -270,11 +277,11 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero__wave',   { opacity: 0, y: 20, duration: 0.6, delay: 0.15 })
-      .from('.hero__title',  { opacity: 0, y: 48, duration: 1.0 }, '-=0.35')
-      .from('.hero__desc',   { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-      .from('.hero__buttons',{ opacity: 0, y: 16, duration: 0.5 }, '-=0.3')
-      .from('.hero__right',  { opacity: 0, x: 24, duration: 0.7 }, '-=0.6')
+    tl.from('.hero__top',      { opacity: 0, y: 16, duration: 0.5, delay: 0.15 })
+      .from('.hero__title',    { opacity: 0, y: 48, duration: 0.9 }, '-=0.3')
+      .from('.hero__desc',     { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+      .from('.hero__buttons',  { opacity: 0, y: 16, duration: 0.5 }, '-=0.3')
+      .from('.hero__services', { opacity: 0, y: 12, duration: 0.5 }, '-=0.3')
       .from('.hero__scroll-hint', { opacity: 0, duration: 0.5 }, '-=0.2');
 
     gsap.to('.hero__content', {
@@ -305,5 +312,22 @@
       }
     });
   });
+
+  /* ────────────── PROJECT TABS ────────────── */
+  const projTabs = document.querySelectorAll('.proj-tab');
+  if (projTabs.length) {
+    projTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        projTabs.forEach(t => t.classList.remove('proj-tab--active'));
+        tab.classList.add('proj-tab--active');
+        document.querySelectorAll('.proj-panel').forEach(p => p.classList.add('proj-panel--hidden'));
+        const panel = document.getElementById('panel-' + tab.dataset.panel);
+        if (panel) {
+          panel.classList.remove('proj-panel--hidden');
+          panel.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+        }
+      });
+    });
+  }
 
 })();

@@ -19,12 +19,13 @@
         <img class="logo-img header__logo-img" src="assets/logo/logo-white.svg" alt="Jan.">
       </a>
       <nav class="header__nav" id="nav">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#resume" class="nav-link">CV / Resume</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">CV / Resume</a>
+        <a href="blog.html" class="nav-link">Blog</a>
       </nav>
       <a href="#contact" class="header__cta">Get in touch</a>
-      <button class="header__burger" id="burger" aria-label="Toggle menu">
+      <button type="button" class="header__burger" id="burger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -32,9 +33,10 @@
 
   <!-- Mobile nav overlay -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#about" class="mobile-nav__link">About</a>
-    <a href="#projects" class="mobile-nav__link">Projects</a>
-    <a href="#resume" class="mobile-nav__link">CV / Resume</a>
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="projects.html" class="mobile-nav__link">Projects</a>
+    <a href="resume.html" class="mobile-nav__link">CV / Resume</a>
+    <a href="blog.html" class="mobile-nav__link">Blog</a>
     <a href="#contact" class="mobile-nav__link cta">Get in touch</a>
   </div>
 
@@ -42,55 +44,66 @@
   <section class="hero" id="hero">
     <canvas class="hero__dots" id="dotCanvas"></canvas>
     <div class="hero__glow" id="heroGlow"></div>
-    <div class="hero__bloom"></div>
 
     <div class="hero__content" id="heroContent">
 
-      <!-- Left: copy -->
-      <div class="hero__left">
-        <p class="hero__wave">AI Developer &amp; Virtual Assistant</p>
-
-        <h1 class="hero__title">
-          Your business,<br>
-          <span class="hero__title-em">running without you.</span>
-        </h1>
-
-        <p class="hero__desc">I build AI agents, automate workflows, and run operations end-to-end so founders and teams can focus on growth instead of admin.</p>
-
-        <div class="hero__buttons">
-          <a href="#contact" class="btn btn--primary">
-            <span>Start a project</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#about" class="btn btn--outline">
-            <span>Learn more</span>
-          </a>
+      <div class="hero__top">
+        <div class="hero__announce">
+          <span class="availability-dot"></span>
+          <span>Available for new projects</span>
         </div>
       </div>
 
-      <!-- Right: credentials card -->
-      <div class="hero__right">
-        <div class="hero__availability" id="availabilityBadge">
-          <span class="availability-dot"></span>
-          <span class="availability-text">Available Full-Time</span>
-        </div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Your business,</span>
+        <span class="hero__title-em">running without you.</span>
+      </h1>
 
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <span class="hero__stat-num">AI</span>
-            <span class="hero__stat-label">Agent Development</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">n8n</span>
-            <span class="hero__stat-label">Workflow Automation</span>
-          </div>
-          <div class="hero__stat">
-            <span class="hero__stat-num">VA</span>
-            <span class="hero__stat-label">Executive Operations</span>
-          </div>
-        </div>
+      <p class="hero__desc">I build AI agents, automate workflows, and run operations end-to-end so founders and teams can focus on growth instead of admin.</p>
 
-        <p class="hero__card-note">Based in the Philippines &middot; Works globally</p>
+      <div class="hero__buttons">
+        <a href="#contact" class="btn btn--primary">
+          <span>Start a project</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#about" class="btn btn--outline">
+          <span>Learn more</span>
+        </a>
+      </div>
+
+      <div class="hero__terminal">
+        <div class="hero__terminal-bar">
+          <span class="term-dot term-dot--red"></span>
+          <span class="term-dot term-dot--yellow"></span>
+          <span class="term-dot term-dot--green"></span>
+          <span class="hero__terminal-tag">workflow.agent — running</span>
+        </div>
+        <div class="hero__terminal-body"><span class="t-dim">$</span> <span class="t-accent">jan</span> run-agent --mode production
+<span class="t-success">✓</span> Trigger received · New lead detected<span class="t-ms">       [12ms]</span>
+<span class="t-success">✓</span> Enriching contact data via Apollo<span class="t-ms">         [84ms]</span>
+<span class="t-success">✓</span> Drafting personalised outreach email<span class="t-ms">      [231ms]</span>
+<span class="t-success">✓</span> Scheduling follow-up in CRM<span class="t-ms">               [49ms]</span>
+<span class="t-dim">──────────────────────────────────────────────</span>
+<span class="t-white">Lead handled.</span> <span class="t-success">No human required.</span></div>
+      </div>
+
+      <div class="hero__stats-strip">
+        <div class="hero__stat-item">
+          <span class="hero__stat-num">30+</span>
+          <span class="hero__stat-label">AI Agents Built</span>
+        </div>
+        <div class="hero__stat-item">
+          <span class="hero__stat-num">50+</span>
+          <span class="hero__stat-label">n8n Workflows</span>
+        </div>
+        <div class="hero__stat-item">
+          <span class="hero__stat-num">10+</span>
+          <span class="hero__stat-label">Happy Clients</span>
+        </div>
+        <div class="hero__stat-item">
+          <span class="hero__stat-num">5k+</span>
+          <span class="hero__stat-label">Hours Saved</span>
+        </div>
       </div>
 
     </div>
@@ -111,137 +124,91 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
-  <section class="section about" id="about">
+  <!-- ═══════════════════════ FEATURE — AI AGENTS ═══════════════════════ -->
+  <section class="section feature" id="ai-agents">
     <div class="container">
-      <p class="section-label">About Me</p>
-      <div class="about__layout">
-        <div class="about__left">
-          <h2 class="about__hook">Helping businesses streamline, scale, and stay ahead.</h2>
-          <p class="about__subhook">I'm an Executive Virtual Assistant focused on operations, systems, and efficiency. Alongside my core skills, I now build AI agents and automated workflows that help businesses reduce manual work and scale smarter.</p>
+      <div class="feature__inner">
+        <div class="feature__copy">
+          <p class="section-label">AI Agent Development</p>
+          <h2 class="section-title">Agents that work while you sleep</h2>
+          <p class="section-sub">From lead qualification to customer onboarding, I build AI agents that handle repetitive, high-volume tasks with zero oversight needed.</p>
+          <ul class="feature__list">
+            <li>Claude &amp; GPT-4 powered reasoning agents</li>
+            <li>Multi-step autonomous task execution</li>
+            <li>CRM, email &amp; calendar integrations</li>
+            <li>Custom tool-calling &amp; function chaining</li>
+          </ul>
+          <div class="feature__cta">
+            <a href="#contact" class="btn btn--outline btn--sm">
+              <span>Build me an agent</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="about__right">
-          <div class="about__stats">
-            <div class="about__stat-item">
-              <span class="about__stat-num">n8n</span>
-              <span class="about__stat-label">Workflow Automation</span>
+        <div class="feature__visual">
+          <div class="feature__terminal">
+            <div class="feature__terminal-bar">
+              <span class="term-dot term-dot--red"></span>
+              <span class="term-dot term-dot--yellow"></span>
+              <span class="term-dot term-dot--green"></span>
+              <span class="feature__terminal-tag">deal-flow.agent</span>
             </div>
-            <div class="about__stat-item">
-              <span class="about__stat-num">AI</span>
-              <span class="about__stat-label">Agent Architecture</span>
-            </div>
-            <div class="about__stat-item">
-              <span class="about__stat-num">VA</span>
-              <span class="about__stat-label">Executive Assistance</span>
-            </div>
-            <div class="about__stat-item">
-              <span class="about__stat-num">∞</span>
-              <span class="about__stat-label">Hours Saved</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="about__agent-cta">
-        <a href="#contact" class="btn btn--outline btn--sm">
-          <span>Want an AI Agent that actually works? Let's talk</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+            <div class="feature__terminal-body"><span class="t-dim"># Founder Research Agent</span>
+<span class="t-accent">agent</span>.run(<span class="t-success">"research_founder"</span>, {
+  linkedin: <span class="t-success">"in/target-founder"</span>,
+  depth:    <span class="t-accent">3</span>
+})
 
-  <!-- ═══════════════════════ PROJECTS — 3 SHOWCASE CARDS ═══════════════════════ -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <p class="section-label">Projects</p>
-      <h2 class="section-title">What I've been working on</h2>
+<span class="t-dim">→</span> <span class="t-white">Scraping LinkedIn profile...</span>
+<span class="t-dim">→</span> <span class="t-white">Extracting company signals...</span>
+<span class="t-dim">→</span> <span class="t-white">Scoring investment fit: </span><span class="t-success">87/100</span>
+<span class="t-dim">→</span> <span class="t-white">Drafting outreach to Notion...</span>
 
-      <div class="showcase" id="showcase">
-        <!-- Card 1 — Claude Code -->
-        <div class="showcase__card" data-category="claude">
-          <div class="showcase__img">
-            <img src="assets/images for card/card images/1.png" alt="Claude Code Projects" loading="lazy">
-          </div>
-          <div class="showcase__body">
-            <span class="showcase__badge">Claude Code</span>
-            <h3 class="showcase__title">AI Agents with Claude Code</h3>
-            <p class="showcase__desc">Built intelligent agents powered by Claude that autonomously manage calendars, summarize emails, and handle complex tasks — reducing manual effort and boosting productivity.</p>
-            <a href="claude-projects.html" class="btn btn--outline btn--sm">View Projects</a>
-          </div>
-        </div>
-
-        <!-- Card 2 — n8n -->
-        <div class="showcase__card" data-category="n8n">
-          <div class="showcase__img">
-            <img src="assets/images for card/card images/2.png" alt="n8n Workflow Projects" loading="lazy">
-          </div>
-          <div class="showcase__body">
-            <span class="showcase__badge">n8n</span>
-            <h3 class="showcase__title">Automated Workflows with n8n</h3>
-            <p class="showcase__desc">Designed end-to-end automation pipelines that streamline content creation, deal screening, and event management — saving hours of repetitive manual work every week.</p>
-            <a href="n8n-projects.html" class="btn btn--outline btn--sm">View Projects</a>
-          </div>
-        </div>
-
-        <!-- Card 3 — My Own Apps -->
-        <div class="showcase__card" data-category="apps">
-          <div class="showcase__img">
-            <img src="assets/images for card/card images/3.png" alt="My Own Apps" loading="lazy">
-          </div>
-          <div class="showcase__body">
-            <span class="showcase__badge">My Apps</span>
-            <h3 class="showcase__title">Revenue-Generating Apps</h3>
-            <p class="showcase__desc">Developed and launched my own applications that are currently live and generating revenue — proving that I don't just build for clients, I build for impact.</p>
-            <a href="#contact" class="btn btn--outline btn--sm">View Projects</a>
-          </div>
-        </div>
-
-        <!-- Card 4 — Ad-Hoc Tasks -->
-        <div class="showcase__card" data-category="adhoc">
-          <div class="showcase__img">
-            <img src="assets/images for card/card images/4.png" alt="Ad-Hoc VA Tasks" loading="lazy">
-          </div>
-          <div class="showcase__body">
-            <span class="showcase__badge">Ad-Hoc</span>
-            <h3 class="showcase__title">Ad-Hoc Tasks</h3>
-            <p class="showcase__desc">Flexible, on-demand support for whatever your business needs — research, data entry, scheduling, coordination, and anything in between. Fast, reliable, and done right.</p>
-            <a href="#contact" class="btn btn--outline btn--sm">Get in Touch</a>
+<span class="t-success">✓</span> Done in <span class="t-accent">1.4s</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════ RESUME ═══════════════════════ -->
-  <section class="section resume" id="resume">
+  <!-- ═══════════════════════ FEATURE — n8n AUTOMATION ═══════════════════════ -->
+  <section class="section feature" id="automation">
     <div class="container">
-      <p class="section-label">Resume</p>
-      <h2 class="section-title">Experience & Skills</h2>
-      <div class="resume__content">
-        <div class="resume__skills">
-          <div class="skill-group">
-            <h3>AI & Automation</h3>
-            <div class="skill-tags">
-              <span>n8n</span><span>Claude AI</span><span>GPT / OpenAI</span><span>LangChain</span><span>AI Agents</span><span>Prompt Engineering</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Development</h3>
-            <div class="skill-tags">
-              <span>JavaScript</span><span>Python</span><span>HTML / CSS</span><span>Node.js</span><span>REST APIs</span><span>Git</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <h3>Operations & Tools</h3>
-            <div class="skill-tags">
-              <span>Executive Assistance</span><span>Project Management</span><span>Google Workspace</span><span>Notion</span><span>Slack</span><span>Figma</span>
-            </div>
+      <div class="feature__inner feature__inner--reverse">
+        <div class="feature__copy">
+          <p class="section-label">n8n Workflow Automation</p>
+          <h2 class="section-title">Workflows that replace entire roles</h2>
+          <p class="section-sub">I design and deploy n8n automation pipelines that connect your tools, eliminate manual handoffs, and run 24/7 without a team.</p>
+          <ul class="feature__list">
+            <li>End-to-end workflow architecture &amp; deployment</li>
+            <li>API integrations — Slack, Notion, Airtable, HubSpot</li>
+            <li>Deal-flow screeners, content pipelines, event agents</li>
+            <li>Error handling, logging &amp; monitoring built in</li>
+          </ul>
+          <div class="feature__cta">
+            <a href="#contact" class="btn btn--outline btn--sm">
+              <span>Automate my workflow</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
         </div>
-        <a href="assets/resume.pdf" download class="btn btn--outline">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span>Download CV</span>
-        </a>
+        <div class="feature__visual">
+          <div class="feature__terminal">
+            <div class="feature__terminal-bar">
+              <span class="term-dot term-dot--red"></span>
+              <span class="term-dot term-dot--yellow"></span>
+              <span class="term-dot term-dot--green"></span>
+              <span class="feature__terminal-tag">n8n-pipeline.log</span>
+            </div>
+            <div class="feature__terminal-body"><span class="t-dim">[08:14:02]</span> <span class="t-accent">TRIGGER</span>  New Typeform submission
+<span class="t-dim">[08:14:02]</span> <span class="t-white">ENRICH </span>  Apollo contact lookup
+<span class="t-dim">[08:14:03]</span> <span class="t-white">FILTER </span>  Budget ≥ $5k? <span class="t-success">Yes</span>
+<span class="t-dim">[08:14:03]</span> <span class="t-white">CREATE </span>  HubSpot deal created
+<span class="t-dim">[08:14:04]</span> <span class="t-white">NOTIFY </span>  Slack #sales pinged
+<span class="t-dim">[08:14:04]</span> <span class="t-white">DRAFT  </span>  Email queued for review
+<span class="t-dim">[08:14:04]</span> <span class="t-success">DONE   </span>  <span class="t-accent">6 steps · 2.1s · 0 errors</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -341,11 +308,11 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <span>janmm.va@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" class="contact__link">
+            <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" rel="noopener" class="contact__link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/janmm97" target="_blank" class="contact__link">
+            <a href="https://github.com/janmm97" target="_blank" rel="noopener" class="contact__link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
               <span>GitHub</span>
             </a>
@@ -415,10 +382,10 @@
         </div>
         <div class="footer__col">
           <h4>Navigate</h4>
-          <a href="#about">About</a>
-          <a href="#resume">CV / Resume</a>
-          <a href="#projects">Projects</a>
-          <a href="#">Blog</a>
+          <a href="about.html">About</a>
+          <a href="resume.html">CV / Resume</a>
+          <a href="projects.html">Projects</a>
+          <a href="blog.html">Blog</a>
         </div>
         <div class="footer__col">
           <h4>Connect &amp; Follow</h4>
@@ -426,8 +393,8 @@
           <a href="#" target="_blank">Follow me on X</a>
           <a href="#" target="_blank">Follow me on Instagram</a>
           <a href="#" target="_blank">Follow me on Facebook</a>
-          <a href="https://www.linkedin.com/in/manalojanm/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/janmm97" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/janmm97" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -441,7 +408,7 @@
   </footer>
 
   <!-- ═══════════════════════ THEME TOGGLE ═══════════════════════ -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
     <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
     <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>

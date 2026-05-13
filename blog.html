@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Jan</title>
+  <meta name="description" content="Thoughts on AI agents, n8n automation, and building systems that run without you — by Jan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <img class="logo-img header__logo-img" src="assets/logo/logo-white.svg" alt="Jan.">
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">CV / Resume</a>
+        <a href="blog.html" class="nav-link nav-link--active">Blog</a>
+      </nav>
+      <a href="index.html#contact" class="header__cta">Get in touch</a>
+      <button type="button" class="header__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="about.html" class="mobile-nav__link">About</a>
+    <a href="projects.html" class="mobile-nav__link">Projects</a>
+    <a href="resume.html" class="mobile-nav__link">CV / Resume</a>
+    <a href="blog.html" class="mobile-nav__link">Blog</a>
+    <a href="index.html#contact" class="mobile-nav__link cta">Get in touch</a>
+  </div>
+
+  <!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Blog</p>
+      <h1 class="page-hero__title">Thoughts on AI,<br>automation &amp; building.</h1>
+      <p class="page-hero__sub">Practical posts on AI agents, n8n workflows, and the systems I use to help businesses run without them.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ BLOG GRID ═══════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <!-- ── Featured post ── -->
+        <a href="#" class="blog-card blog-card--featured reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">AI Agents</span>
+            <span class="blog-card__tag blog-card__tag--plain">Claude</span>
+            <span class="blog-card__tag blog-card__tag--plain">n8n</span>
+            <span class="blog-card__tag blog-card__tag--plain">Lead Generation</span>
+          </div>
+          <h2 class="blog-card__title">How I Built a Founder Research Agent That Scores Leads in Under 2 Seconds</h2>
+          <p class="blog-card__excerpt">Breaking down the Claude + n8n pipeline that enriches LinkedIn profiles, extracts company signals, scores investment fit out of 100, and drafts a personalised outreach email — all in one automated flow with zero human input.</p>
+          <div class="blog-card__meta">
+            <time>Apr 22, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>6 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── Post 2 ── -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">n8n</span>
+            <span class="blog-card__tag blog-card__tag--plain">Zapier</span>
+            <span class="blog-card__tag blog-card__tag--plain">Automation</span>
+            <span class="blog-card__tag blog-card__tag--plain">Comparison</span>
+          </div>
+          <h3 class="blog-card__title">n8n vs Zapier: What I Actually Use After 50+ Automations</h3>
+          <p class="blog-card__excerpt">I've built automations in both. Here's an honest breakdown of where each tool wins, where it breaks, and why I default to n8n for anything beyond simple triggers.</p>
+          <div class="blog-card__meta">
+            <time>Apr 14, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>8 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── Post 3 ── -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">Tools</span>
+            <span class="blog-card__tag blog-card__tag--plain">AI Agents</span>
+            <span class="blog-card__tag blog-card__tag--plain">Stack</span>
+            <span class="blog-card__tag blog-card__tag--plain">n8n</span>
+          </div>
+          <h3 class="blog-card__title">The AI Agent Stack I Use for Every Client Project</h3>
+          <p class="blog-card__excerpt">Claude for reasoning, n8n for orchestration, Airtable for state, Slack for alerts. Here's the exact configuration I reach for on day one of every new engagement.</p>
+          <div class="blog-card__meta">
+            <time>Apr 7, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>5 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── Post 4 ── -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">n8n</span>
+            <span class="blog-card__tag blog-card__tag--plain">Automation</span>
+            <span class="blog-card__tag blog-card__tag--plain">VC</span>
+            <span class="blog-card__tag blog-card__tag--plain">HubSpot</span>
+          </div>
+          <h3 class="blog-card__title">Building a Deal-Flow Screener: From Typeform to Slack in 6 Nodes</h3>
+          <p class="blog-card__excerpt">A walk-through of the exact n8n workflow I built for a VC client — intake form, Apollo enrichment, GPT-4 scoring, HubSpot deal creation, and Slack notification in one pipeline.</p>
+          <div class="blog-card__meta">
+            <time>Mar 28, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>7 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── Post 5 ── -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">AI Agents</span>
+            <span class="blog-card__tag blog-card__tag--plain">Prompting</span>
+            <span class="blog-card__tag blog-card__tag--plain">Claude</span>
+            <span class="blog-card__tag blog-card__tag--plain">GPT-4</span>
+          </div>
+          <h3 class="blog-card__title">Prompt Engineering for Agents: The Patterns That Actually Work</h3>
+          <p class="blog-card__excerpt">Most prompt guides are written for chatbots. Agents are different. Here are the patterns — role framing, tool descriptions, chain-of-thought triggers — that I use in production.</p>
+          <div class="blog-card__meta">
+            <time>Mar 15, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>6 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- ── Post 6 ── -->
+        <a href="#" class="blog-card reveal">
+          <div class="blog-card__tags">
+            <span class="blog-card__tag">Opinion</span>
+            <span class="blog-card__tag blog-card__tag--plain">Automation</span>
+            <span class="blog-card__tag blog-card__tag--plain">Strategy</span>
+          </div>
+          <h3 class="blog-card__title">Your Automation Isn't Saving You Time. Here's Why.</h3>
+          <p class="blog-card__excerpt">Most automations fail not because the tools are wrong, but because the underlying process is broken. Automating a bad workflow just makes it fail faster and at scale.</p>
+          <div class="blog-card__meta">
+            <time>Mar 3, 2026</time>
+            <span class="blog-card__sep">·</span>
+            <span>4 min read</span>
+            <span class="blog-card__read-link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ── Subscribe CTA ── -->
+      <div class="blog-subscribe reveal">
+        <p class="section-label" style="display:inline-flex; margin-bottom:16px">Newsletter</p>
+        <h3>New posts, straight to your inbox.</h3>
+        <p>Practical writing on AI agents, automation, and building systems that work without you. No fluff, no spam.</p>
+        <form class="blog-subscribe__form" onsubmit="return false;">
+          <input type="email" class="blog-subscribe__input" placeholder="your@email.com" autocomplete="email">
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid reveal">
+        <div class="footer__col footer__col-brand">
+          <a href="index.html" class="footer__logo-link">
+            <img class="logo-img footer__logo-img" src="assets/logo/logo-white.svg" alt="Jan.">
+          </a>
+          <p>AI Developer &amp; Virtual Assistant building intelligent systems that help businesses scale smarter.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Navigate</h4>
+          <a href="about.html">About</a>
+          <a href="resume.html">CV / Resume</a>
+          <a href="projects.html">Projects</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer__col">
+          <h4>Connect &amp; Follow</h4>
+          <a href="mailto:janmm.va@gmail.com">Email</a>
+          <a href="#" target="_blank">Follow me on X</a>
+          <a href="#" target="_blank">Follow me on Instagram</a>
+          <a href="https://www.linkedin.com/in/manalojanm/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/janmm97" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">&copy; 2026 Jan. All rights reserved.</span>
+        <a href="#" class="footer__reelx" target="_blank">
+          Check out ReelX
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
