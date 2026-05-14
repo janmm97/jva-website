@@ -272,6 +272,8 @@
     revealObserver.observe(el);
   });
 
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
   /* ────────────── GSAP HERO ENTRANCE ────────────── */
   if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);

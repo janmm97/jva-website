@@ -330,8 +330,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* Main headline */
 .hero__title {
-  font-family: var(--font-display); font-size: clamp(3.2rem, 8.5vw, 7.5rem);
-  font-weight: 800; line-height: 1.0; letter-spacing: -0.04em;
+  font-family: var(--font-display); font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.04em;
   margin-bottom: 20px; color: var(--text-primary);
 }
 .hero__title-line { display: block; }
