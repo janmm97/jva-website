@@ -22,7 +22,6 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link nav-link--active">Projects</a>
         <a href="resume.html" class="nav-link">CV / Resume</a>
-        <a href="blog.html" class="nav-link">Blog</a>
       </nav>
       <a href="index.html#contact" class="header__cta">Get in touch</a>
       <button type="button" class="header__burger" id="burger" aria-label="Toggle menu">
@@ -35,7 +34,6 @@
     <a href="about.html" class="mobile-nav__link">About</a>
     <a href="projects.html" class="mobile-nav__link">Projects</a>
     <a href="resume.html" class="mobile-nav__link">CV / Resume</a>
-    <a href="blog.html" class="mobile-nav__link">Blog</a>
     <a href="index.html#contact" class="mobile-nav__link cta">Get in touch</a>
   </div>
 
@@ -72,115 +70,90 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════ PROJECT TABS ═══════════════════════ -->
+  <!-- ═══════════════════════ PROJECT GRID ═══════════════════════ -->
   <section class="section projects" id="projects">
     <div class="container">
+      <div class="proj-card-grid">
 
-      <!-- Tab bar -->
-      <div class="proj-tabs">
-        <button type="button" class="proj-tab proj-tab--active" data-panel="claude">Claude Code</button>
-        <button type="button" class="proj-tab" data-panel="n8n">n8n Workflows</button>
-        <button type="button" class="proj-tab" data-panel="personal">Personal Projects</button>
-      </div>
-
-      <!-- ── Claude Code Panel ── -->
-      <div class="proj-panel" id="panel-claude">
-        <div class="vid-grid">
-          <div class="vid-card reveal">
-            <div class="detail-card__media detail-card__media--video">
-              <video src="assets/Claude Code Agents/Calendar Assistant.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-              <div class="play-overlay" aria-label="Play video">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-            <div class="vid-card__body">
-              <h3>Calendar Assistant</h3>
-              <p>An intelligent agent powered by Claude Code that autonomously retrieves and organizes upcoming calendar events for the week — streamlining scheduling with zero manual input.</p>
-            </div>
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge">AI Agent</span>
+            <span class="proj-card__year">2026</span>
           </div>
-          <div class="vid-card reveal">
-            <div class="detail-card__media detail-card__media--video">
-              <video src="assets/Claude Code Agents/Email Assistant.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-              <div class="play-overlay" aria-label="Play video">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
-            <div class="vid-card__body">
-              <h3>Email Assistant</h3>
-              <p>An AI email agent that fetches the 10 most recent emails and generates concise summaries — enabling faster inbox review and a significant productivity boost.</p>
-            </div>
+          <h3 class="proj-card__title">Lorem ipsum dolor sit amet consectetur</h3>
+          <p class="proj-card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>Claude</span><span>Python</span></div>
+            <span class="proj-card__arrow">→</span>
           </div>
         </div>
-        <div class="claude-proj-cta reveal">
-          <p>Want to see what else I can build with Claude Code?</p>
-          <a href="index.html#contact" class="btn btn--primary">
-            <span>Book a Time</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </a>
-        </div>
-      </div>
 
-      <!-- ── n8n Workflows Panel ── -->
-      <div class="proj-panel proj-panel--hidden" id="panel-n8n">
-        <div class="n8n-bento">
-
-          <!-- Featured: Content Generator -->
-          <div class="n8n-card n8n-card--featured reveal">
-            <div class="n8n-card__img">
-              <img src="assets/n8n projects/Content Generator.png" alt="Social Media Content Generator" loading="lazy">
-            </div>
-            <div class="n8n-card__body">
-              <h3>Social Media Content Generator</h3>
-              <p>Runs on a scheduled trigger and uses multiple AI agents to generate fresh, non-repetitive content across thought leadership, promos, memes, and feature posts. Analyzes past posts to maintain consistency, then writes, stores, and uploads everything automatically.</p>
-              <div class="n8n-card__result">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>Six-figure impressions on individual posts through improved content consistency and production speed.</span>
-              </div>
-            </div>
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge proj-card__badge--n8n">n8n</span>
+            <span class="proj-card__year">2026</span>
           </div>
-
-          <!-- Deal Flow Checker -->
-          <div class="n8n-card reveal">
-            <div class="n8n-card__img">
-              <img src="assets/n8n projects/Deal Flow Checker.png" alt="Deal Flow Checker" loading="lazy">
-            </div>
-            <div class="n8n-card__body">
-              <h3>Deal Flow Checker</h3>
-              <p>Real-time email monitoring that uses AI to extract financial metrics, evaluate each deal against acquisition criteria, and route qualified opportunities to Slack — filtering noise automatically.</p>
-              <div class="n8n-card__result">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>Saved 4–5 hours/week previously spent reviewing deal emails.</span>
-              </div>
-            </div>
+          <h3 class="proj-card__title">Lorem ipsum adipiscing elit tempor</h3>
+          <p class="proj-card__desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>n8n</span><span>Slack</span></div>
+            <span class="proj-card__arrow">→</span>
           </div>
+        </div>
 
-          <!-- Events Review (full-width horizontal) -->
-          <div class="n8n-card n8n-card--wide reveal">
-            <div class="n8n-card__img">
-              <img src="assets/n8n projects/Events Review IMG.png" alt="Events Review Automation" loading="lazy">
-            </div>
-            <div class="n8n-card__body">
-              <h3>Events Review Automation</h3>
-              <p>An intelligent workflow that monitors, evaluates, and organizes upcoming events — automatically curating the relevant ones and delivering a clean summary, eliminating hours of manual scrolling and filtering.</p>
-              <div class="n8n-card__result">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>Automated event curation and reduced manual review time significantly.</span>
-              </div>
-            </div>
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge proj-card__badge--va">VA</span>
+            <span class="proj-card__year">2025</span>
           </div>
-
+          <h3 class="proj-card__title">Lorem ipsum incididunt ut labore dolore</h3>
+          <p class="proj-card__desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>Notion</span><span>Slack</span></div>
+            <span class="proj-card__arrow">→</span>
+          </div>
         </div>
-      </div>
 
-      <!-- ── Personal Projects Panel ── -->
-      <div class="proj-panel proj-panel--hidden" id="panel-personal">
-        <div class="proj-coming-soon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <p>Coming Soon</p>
-          <span>Personal projects are currently in stealth. Check back soon.</span>
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge proj-card__badge--n8n">n8n</span>
+            <span class="proj-card__year">2025</span>
+          </div>
+          <h3 class="proj-card__title">Lorem ipsum magna aliqua enim minim</h3>
+          <p class="proj-card__desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed perspiciatis.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>n8n</span><span>HubSpot</span></div>
+            <span class="proj-card__arrow">→</span>
+          </div>
         </div>
-      </div>
 
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge">AI Agent</span>
+            <span class="proj-card__year">2025</span>
+          </div>
+          <h3 class="proj-card__title">Lorem ipsum veniam quis nostrud exercitation</h3>
+          <p class="proj-card__desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>GPT-4</span><span>REST API</span></div>
+            <span class="proj-card__arrow">→</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal">
+          <div class="proj-card__top">
+            <span class="proj-card__badge proj-card__badge--va">VA</span>
+            <span class="proj-card__year">2024</span>
+          </div>
+          <h3 class="proj-card__title">Lorem ipsum ullamco laboris commodo</h3>
+          <p class="proj-card__desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione.</p>
+          <div class="proj-card__footer">
+            <div class="proj-card__tags"><span>Airtable</span><span>Zapier</span></div>
+            <span class="proj-card__arrow">→</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -214,7 +187,6 @@
           <a href="about.html">About</a>
           <a href="resume.html">CV / Resume</a>
           <a href="projects.html">Projects</a>
-          <a href="blog.html">Blog</a>
         </div>
         <div class="footer__col">
           <h4>Connect &amp; Follow</h4>
