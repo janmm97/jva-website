@@ -165,12 +165,14 @@
 
   /* ────────────── TECH CAROUSEL ────────────── */
   const carousel = document.getElementById('carousel');
-  const logoCount = 25;
-  let logoHTML = '';
-  for (let i = 1; i <= logoCount; i++) {
-    logoHTML += `<div class="carousel__item"><img src="assets/tools logo/techstack logos/${i}.png" alt="Tool ${i}" loading="lazy"></div>`;
+  if (carousel) {
+    const logoCount = 25;
+    let logoHTML = '';
+    for (let i = 1; i <= logoCount; i++) {
+      logoHTML += `<div class="carousel__item"><img src="assets/tools logo/techstack logos/${i}.png" alt="Tool ${i}" loading="lazy"></div>`;
+    }
+    carousel.innerHTML = logoHTML + logoHTML;
   }
-  carousel.innerHTML = logoHTML + logoHTML; // duplicate for infinite loop
 
   /* ────────────── VIDEO PLAY/PAUSE ────────────── */
   document.querySelectorAll('.detail-card__media--video').forEach(mediaEl => {
@@ -197,6 +199,7 @@
   const captchaQ = document.getElementById('captchaQuestion');
 
   function generateCaptcha() {
+    if (!captchaQ) return;
     const a = Math.floor(Math.random() * 10) + 1;
     const b = Math.floor(Math.random() * 10) + 1;
     captchaAnswer = a + b;
@@ -208,10 +211,9 @@
   const form = document.getElementById('contactForm');
   const statusEl = document.getElementById('formStatus');
 
-  // Google Apps Script Web App URL — replace with your deployed script URL
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxIj7uz1qofVkJK8E8UZLfTAGHsFgGkcXkoCwlCmxCl8CTAnVR-OMAW6DLJep5LYA/exec';
 
-  form.addEventListener('submit', async (e) => {
+  if (form) form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Validate captcha
