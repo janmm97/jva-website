@@ -1,0 +1,110 @@
+{
+  "anthropic": {
+    "dark": "anthropic.dark.svg",
+    "light": "anthropic.light.svg"
+  },
+  "perplexity": {
+    "dark": "perplexity.dark.svg",
+    "light": "perplexity.light.svg"
+  },
+  "gemini": {
+    "dark": "gemini.dark.svg",
+    "light": "gemini.light.svg"
+  },
+  "claude": {
+    "dark": "claude.dark.svg",
+    "light": "claude.light.svg"
+  },
+  "claudecode": {
+    "dark": "claudecode.dark.svg",
+    "light": "claudecode.light.svg"
+  },
+  "openrouter": {
+    "dark": "openrouter.dark.svg",
+    "light": "openrouter.light.svg"
+  },
+  "n8n": {
+    "dark": "n8n.dark.svg",
+    "light": "n8n.light.svg"
+  },
+  "zapier": {
+    "dark": "zapier.dark.svg",
+    "light": "zapier.light.svg"
+  },
+  "notion": {
+    "dark": "notion.dark.svg",
+    "light": "notion.light.svg"
+  },
+  "clickup": {
+    "dark": "clickup.dark.svg",
+    "light": "clickup.light.svg"
+  },
+  "asana": {
+    "dark": "asana.dark.svg",
+    "light": "asana.light.svg"
+  },
+  "trello": {
+    "dark": "trello.dark.svg",
+    "light": "trello.light.svg"
+  },
+  "shopify": {
+    "dark": "shopify.dark.svg",
+    "light": "shopify.light.svg"
+  },
+  "resend": {
+    "dark": "resend.dark.svg",
+    "light": "resend.light.svg"
+  },
+  "loops": {
+    "dark": "loops.dark.svg",
+    "light": "loops.light.svg"
+  },
+  "openai": {
+    "dark": "openai.svg",
+    "light": "openai.svg"
+  },
+  "codex": {
+    "dark": "codex.svg",
+    "light": "codex.svg"
+  },
+  "vscode": {
+    "dark": "vscode.svg",
+    "light": "vscode.svg"
+  },
+  "grok": {
+    "dark": "grok.svg",
+    "light": "grok.svg"
+  },
+  "monday": {
+    "dark": "monday.svg",
+    "light": "monday.svg"
+  },
+  "canva": {
+    "dark": "canva.png",
+    "light": "canva.png"
+  },
+  "apify": {
+    "dark": "apify.dark.svg",
+    "light": "apify.light.svg"
+  },
+  "attio": {
+    "dark": "attio.png",
+    "light": "attio.png"
+  },
+  "firecrawl": {
+    "dark": "firecrawl.png",
+    "light": "firecrawl.png"
+  },
+  "tavily": {
+    "dark": "tavily.ico",
+    "light": "tavily.ico"
+  },
+  "exa": {
+    "dark": "exa.ico",
+    "light": "exa.ico"
+  },
+  "replyio": {
+    "dark": "replyio.png",
+    "light": "replyio.png"
+  }
+}
