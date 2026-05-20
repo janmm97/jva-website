@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Check } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -13,7 +13,7 @@ const BOOKING_URL = "https://form.typeform.com/to/kVhRsNfy";
 const plans = [
   {
     name: "One-Time Setup",
-    price: { monthly: "$1,500 – $3,000", annual: "$1,500 – $3,000" },
+    price: "$1,500 – $3,000",
     period: "one-time",
     features: [
       "Full operations audit",
@@ -27,7 +27,7 @@ const plans = [
   },
   {
     name: "Setup + Retainer",
-    price: { monthly: "From $2,000", annual: "From $1,700" },
+    price: "From $2,000",
     period: "/mo",
     badge: "Most Popular",
     features: [
@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: "Full-Time VA Contract",
-    price: { monthly: "Custom", annual: "Custom" },
+    price: "Custom",
     period: "exclusive contract",
     features: [
       "Dedicated AI VA, full-time",
@@ -59,46 +59,20 @@ const plans = [
 ];
 
 export function Pricing() {
-  const [annual, setAnnual] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="pricing" className="py-24 lg:py-32 bg-jva-dark">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-12">
+        <div className="mb-16">
           <SectionLabel className="mb-4">Pricing</SectionLabel>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-display mb-4 max-w-2xl">
             The Right Investment for Where You Are
           </h2>
-          <p className="text-jva-lavender text-lg mb-8">
+          <p className="text-jva-lavender text-lg">
             No hidden fees. No lock-in surprises. Just clear value.
           </p>
-
-          {/* Toggle */}
-          <div className="inline-flex items-center gap-3 bg-jva-deep rounded-full p-1 border border-jva-purple/30">
-            <button
-              onClick={() => setAnnual(false)}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-200 ${
-                !annual
-                  ? "bg-jva-accent text-white"
-                  : "text-jva-lavender/60 hover:text-jva-lavender"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setAnnual(true)}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-200 ${
-                annual
-                  ? "bg-jva-accent text-white"
-                  : "text-jva-lavender/60 hover:text-jva-lavender"
-              }`}
-            >
-              Annual{" "}
-              <span className="text-xs text-green-400 ml-1">2 months free</span>
-            </button>
-          </div>
         </div>
 
         <motion.div
@@ -133,7 +107,7 @@ export function Pricing() {
 
                   <div className="mb-1">
                     <span className="text-3xl font-black font-display text-jva-white">
-                      {annual ? plan.price.annual : plan.price.monthly}
+                      {plan.price}
                     </span>
                   </div>
                   <p className="text-jva-lavender/50 text-sm mb-6">{plan.period}</p>
