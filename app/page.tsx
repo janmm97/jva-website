@@ -1,6 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
 import { IntegrationSphere } from "@/components/sections/IntegrationSphere";
-import { LogoTicker } from "@/components/sections/LogoTicker";
 import { Services } from "@/components/sections/Services";
 import { Products } from "@/components/sections/Products";
 import { Process } from "@/components/sections/Process";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <LogoTicker />
       <IntegrationSphere />
       <Services />
       <Products />

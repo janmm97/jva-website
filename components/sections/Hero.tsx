@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-
-const BOOKING_URL = "https://form.typeform.com/to/kVhRsNfy";
+import { ToolTickerStrip } from "@/components/sections/LogoTicker";
 
 const containerVariants = {
   hidden: {},
@@ -53,27 +51,49 @@ function Particles() {
   );
 }
 
+
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-jva-deep pt-20"
+      className="hero-section relative min-h-screen flex flex-col overflow-hidden pt-20"
     >
       <Particles />
 
-      {/* Ambient radial glow — no orb image */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-        <div className="w-[680px] h-[680px] rounded-full bg-jva-accent/10 blur-[130px]" />
+      {/* Vertical grid column lines */}
+      <div
+        className="hero-grid-overlay absolute left-0 top-0 z-0 grid h-full w-full pointer-events-none"
+        aria-hidden="true"
+      >
+        <div />
+        <div className="hero-grid-center" />
+        <div />
       </div>
-      <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-jva-bright/5 blur-[80px] pointer-events-none" aria-hidden="true" />
 
-      {/* Centered text content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      {/* Arc sphere at the bottom */}
+      <div
+        className="hero-arc absolute -translate-x-1/2 rounded-[100%] border border-[#9B6FD0]/30 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      {/* Left soft bloom */}
+      <figure className="hero-bloom-left pointer-events-none absolute left-[4vw] top-[64px] z-0 hidden aspect-square w-[32vw] rounded-full opacity-40 blur-[100px] md:block" aria-hidden="true" />
+      {/* Right soft bloom */}
+      <figure className="hero-bloom-right pointer-events-none absolute bottom-[-50px] right-[7vw] z-0 hidden aspect-square w-[30vw] rounded-full opacity-40 blur-[100px] md:block" aria-hidden="true" />
+
+      {/* Bottom accent glow behind arc */}
+      <figure
+        className="hero-arc-glow pointer-events-none absolute bottom-[-70%] left-1/2 z-0 block aspect-square w-[520px] -translate-x-1/2 rounded-full blur-[200px]"
+        aria-hidden="true"
+      />
+
+      {/* Main content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center gap-10 pb-[8vh]">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-7"
+          className="flex flex-col items-center gap-7 max-w-4xl text-center px-6"
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
@@ -105,32 +125,16 @@ export function Hero() {
             AI workflows and automation tools built for small business owners
             who are done doing everything manually.
           </motion.p>
+        </motion.div>
 
-          {/* CTAs */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center gap-3"
-          >
-            <Button
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              size="lg"
-            >
-              Book a free strategy call ↗
-            </Button>
-            <Button variant="outline" href="#services" size="lg">
-              View services
-            </Button>
-          </motion.div>
-
-          {/* Trust line */}
-          <motion.p
-            variants={itemVariants}
-            className="text-jva-lavender/50 text-sm"
-          >
-            Trusted by entrepreneurs across the US, UK, AU &amp; CA
-          </motion.p>
+        {/* Tool carousel — full width, below subtitle */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          className="w-full"
+        >
+          <ToolTickerStrip />
         </motion.div>
       </div>
     </section>

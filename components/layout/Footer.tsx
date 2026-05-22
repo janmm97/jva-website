@@ -1,14 +1,50 @@
 "use client";
 
-const BOOKING_URL = "https://form.typeform.com/to/kVhRsNfy";
+const SOCIALS = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/manalojanm/",
+    icon: "https://cdn.brandfetch.io/linkedin.com/w/32/h/32/icon",
+  },
+  {
+    name: "X",
+    href: "https://x.com/thejva97",
+    icon: "https://cdn.brandfetch.io/x.com/w/32/h/32/icon",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@thejva97",
+    icon: "https://cdn.brandfetch.io/youtube.com/w/32/h/32/icon",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/janmm97",
+    icon: "https://cdn.brandfetch.io/github.com/w/32/h/32/icon",
+  },
+];
+
+const NAV_COL1 = [
+  { label: "About",    href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Products", href: "#products" },
+  { label: "Blog",     href: "/blog" },
+  { label: "Contact",  href: "#contact" },
+];
+
+const NAV_COL2 = [
+  { label: "Terms & Services",  href: "/terms",   highlight: false },
+  { label: "Privacy & Policy",  href: "/privacy", highlight: false },
+  { label: "Check out Climbr",  href: "#",        highlight: true },
+];
 
 export function Footer() {
   return (
     <footer className="bg-jva-deep border-t border-jva-purple/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+
           {/* Col 1 — Brand */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <img
               src="/assets/logo/jva-logo-primary-reverse-svg.svg"
               alt="JVA"
@@ -25,134 +61,60 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Col 2 — Services */}
+          {/* Col 2 — Primary nav */}
+          <ul className="space-y-3">
+            {NAV_COL1.map(({ label, href }) => (
+              <li key={label}>
+                <a href={href} className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Col 3 — Secondary nav */}
+          <ul className="space-y-3">
+            {NAV_COL2.map(({ label, href, highlight }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className={`text-sm transition-colors duration-200 ${
+                    highlight
+                      ? "text-jva-bright hover:text-jva-lavender font-medium"
+                      : "text-jva-lavender/70 hover:text-jva-lavender"
+                  }`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Col 3 — Socials */}
           <div>
-            <h4 className="text-jva-white text-sm font-semibold mb-4 tracking-wide">
-              Services
+            <h4 className="text-jva-white text-sm font-semibold mb-5 tracking-wide">
+              Follow me on my socials
             </h4>
-            <ul className="space-y-3">
-              {[
-                "One-Time Setup",
-                "Setup + Retainer",
-                "Full-Time VA Contract",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                </li>
+            <div className="flex items-center gap-4">
+              {SOCIALS.map(({ name, href, icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="group flex items-center justify-center w-9 h-9 rounded-lg bg-jva-dark/80 border border-jva-purple/30 hover:border-jva-bright/50 transition-all duration-200 hover:scale-110"
+                >
+                  <img
+                    src={icon}
+                    alt={name}
+                    className="w-5 h-5 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                  />
+                </a>
               ))}
-            </ul>
-          </div>
-
-          {/* Col 3 — Products */}
-          <div>
-            <h4 className="text-jva-white text-sm font-semibold mb-4 tracking-wide">
-              Products
-            </h4>
-            <ul className="space-y-3">
-              {[
-                "Email Triage Agent",
-                "UGC Content Generator",
-                "Ad Generator (Coming Soon)",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4 — Connect */}
-          <div>
-            <h4 className="text-jva-white text-sm font-semibold mb-4 tracking-wide">
-              Connect
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                >
-                  Book a call
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                >
-                  Twitter / X
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-jva-lavender/70 hover:text-jva-lavender text-sm transition-colors duration-200"
-                >
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Newsletter */}
-        <div className="mt-12 pt-8 border-t border-jva-purple/20">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-            <div>
-              <p className="text-jva-white text-sm font-medium mb-1">
-                Stay in the loop
-              </p>
-              <p className="text-jva-lavender/50 text-xs">
-                New automations, products, and insights — no spam.
-              </p>
             </div>
-            <form
-              className="flex gap-2 w-full sm:w-auto"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="bg-jva-dark border border-jva-purple/40 rounded-full px-4 py-2 text-sm text-jva-white placeholder:text-jva-lavender/40 focus:outline-none focus:border-jva-accent/60 transition-colors w-full sm:w-64"
-              />
-              <button
-                type="submit"
-                className="bg-jva-accent hover:bg-jva-bright text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200 whitespace-nowrap"
-              >
-                Stay updated
-              </button>
-            </form>
           </div>
+
         </div>
       </div>
     </footer>

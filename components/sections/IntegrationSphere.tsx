@@ -78,7 +78,7 @@ export function IntegrationSphere() {
   const [revealed, setRevealed] = useState(false);
 
   return (
-    <section className="py-24 lg:py-32 bg-jva-dark overflow-hidden">
+    <section className="pt-20 pb-20 lg:pt-28 lg:pb-28 bg-jva-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -156,10 +156,10 @@ export function IntegrationSphere() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute inset-[8%] flex items-center justify-center ${!revealed ? "cursor-pointer" : ""}`}
-                onClick={() => !revealed && setRevealed(true)}
-                role={!revealed ? "button" : undefined}
-                aria-label={!revealed ? "Click to explore integrations" : undefined}
+                className="absolute inset-[8%] flex items-center justify-center cursor-pointer"
+                onClick={() => setRevealed(r => !r)}
+                role="button"
+                aria-label={revealed ? "Click to hide integrations" : "Click to explore integrations"}
               >
                 <img
                   src="/assets/logo/jva-orb-svg.svg"

@@ -92,28 +92,31 @@ const products = [
     preview: <EmailTriagePreview />,
     tools: ["Gmail", "ElevenLabs", "Slack", "Claude Code"],
     cta: "Get this skill →",
+    ctaHref: "https://github.com/janmm97/Email-Triage-Brief",
     comingSoon: false,
   },
   {
     status: "Available Now",
     statusVariant: "success" as const,
-    title: "UGC Content Generator",
+    title: "Automated Social Media Content Pipeline",
     description:
-      "Record yourself once — or never. Generate branded UGC videos with your AI avatar, AI voiceover, and AI-generated B-roll using Seedance 2.0, Kling 3.0, and Veo 3.1 Pro.",
+      "A full team of AI agents — content strategist, script writer, prompt engineer, and video director — working together to produce scroll-stopping videos from scratch. Your brand voice goes in, ready-to-post content comes out.",
     preview: <UGCPreview />,
-    tools: ["HeyGen", "ElevenLabs", "Kie.ai", "Notion", "Claude Code"],
+    tools: ["Notion", "OpenRouter", "ElevenLabs", "HeyGen", "Kie AI"],
     cta: "Get this skill →",
+    ctaHref: BOOKING_URL,
     comingSoon: false,
   },
   {
     status: "Coming Soon",
     statusVariant: "warning" as const,
-    title: "Digital Marketing Ad Generator",
+    title: "Meeting Brief Notes",
     description:
-      "End-to-end ad creative pipeline — copy, visuals, and targeting. Performance-ready content at scale.",
+      "Drop in a meeting recording and get a clean, structured brief back — key decisions, action items, owners, and deadlines. No more re-listening, no more missed follow-ups.",
     preview: null,
     tools: [],
     cta: "Join waitlist →",
+    ctaHref: BOOKING_URL,
     comingSoon: true,
   },
 ];
@@ -181,7 +184,7 @@ export function Products() {
 
                   <div className="mt-auto">
                     <Button
-                      href={BOOKING_URL}
+                      href={product.ctaHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       variant="outline"

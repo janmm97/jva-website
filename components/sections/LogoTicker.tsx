@@ -1,4 +1,4 @@
-const toolLogos = [
+export const toolLogos = [
   { name: "n8n",         src: "/assets/tools-logo/n8n.light.svg" },
   { name: "Claude Code", src: "/assets/tools-logo/claudecode.light.svg" },
   { name: "Anthropic",   src: "/assets/tools-logo/anthropic.light.svg" },
@@ -21,6 +21,30 @@ const toolLogos = [
 
 const tickerItems = [...toolLogos, ...toolLogos];
 
+export function ToolTickerStrip() {
+  return (
+    <div className="ticker-wrap overflow-hidden">
+      <div className="ticker-track flex items-center gap-0">
+        {tickerItems.map((logo, i) => (
+          <div
+            key={i}
+            className="flex flex-col items-center gap-2.5 flex-shrink-0 px-10 group"
+          >
+            <img
+              src={logo.src}
+              alt={logo.name}
+              className="h-8 w-auto object-contain opacity-40 group-hover:opacity-90 transition-opacity duration-300"
+            />
+            <span className="text-jva-lavender/30 group-hover:text-jva-lavender/70 text-xs tracking-wide transition-colors duration-300 font-display">
+              {logo.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function LogoTicker() {
   return (
     <section className="bg-jva-deep border-y border-jva-purple/15 py-14">
@@ -28,25 +52,7 @@ export function LogoTicker() {
         Built for the tools you already use
       </p>
 
-      <div className="ticker-wrap overflow-hidden">
-        <div className="ticker-track flex items-center gap-0">
-          {tickerItems.map((logo, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center gap-2.5 flex-shrink-0 px-10 group"
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="h-8 w-auto object-contain opacity-40 group-hover:opacity-90 transition-opacity duration-300"
-              />
-              <span className="text-jva-lavender/30 group-hover:text-jva-lavender/70 text-xs tracking-wide transition-colors duration-300 font-display">
-                {logo.name}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ToolTickerStrip />
     </section>
   );
 }
