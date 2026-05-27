@@ -94,16 +94,16 @@ function ProcessCard({
   index: number;
   activeFloat: MotionValue<number>;
 }) {
-  const y       = useTransform(activeFloat, (val) => `${(index - val) * 110}%`);
-  const scale   = useTransform(activeFloat, (val) => Math.max(0.84, 1 - Math.abs(index - val) * 0.08));
-  const opacity = useTransform(activeFloat, (val) => {
+  const yPercent = useTransform(activeFloat, (val) => (index - val) * 110);
+  const scale    = useTransform(activeFloat, (val) => Math.max(0.84, 1 - Math.abs(index - val) * 0.08));
+  const opacity  = useTransform(activeFloat, (val) => {
     const abs = Math.abs(index - val);
     return abs > 1.4 ? 0 : Math.max(0, 1 - abs * 0.7);
   });
 
   return (
     <motion.div
-      style={{ y, scale, opacity }}
+      style={{ yPercent, scale, opacity }}
       className="absolute inset-0"
     >
       <div

@@ -3,7 +3,7 @@
 import { forwardRef } from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "ghost" | "outline";
+  variant?: "primary" | "ghost" | "outline" | "heroCta";
   size?: "sm" | "md" | "lg";
   href?: string;
   target?: string;
@@ -23,6 +23,8 @@ const variantClasses = {
     "text-jva-lavender hover:text-white font-medium transition-all duration-200",
   outline:
     "border border-jva-purple/60 text-jva-lavender hover:border-jva-bright/60 hover:text-white font-medium transition-all duration-200",
+  heroCta:
+    "bg-jva-accent text-white font-medium transition-all duration-300 shadow-[0_0_18px_rgba(255,255,255,0.35)] hover:bg-white hover:text-purple-500 hover:shadow-[0_0_24px_rgba(192,132,252,0.6)]",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

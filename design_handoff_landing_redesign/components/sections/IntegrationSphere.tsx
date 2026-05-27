@@ -14,16 +14,17 @@ interface Chip {
   delay: number;
 }
 
+// White-fill SVGs on a dark chip bg — .light.svg variants are correct for dark surfaces.
 const chips: Chip[] = [
-  { name: "n8n",         src: "/assets/tools-logo/n8n.dark.svg",            top: "4%",    left: "30%",  delay: 0 },
-  { name: "Claude Code", src: "/assets/tools-logo/claudecode.dark.svg",     top: "10%",   right: "8%",  delay: 0.08 },
-  { name: "Notion",      src: "/assets/tools-logo/notion.dark.svg",         top: "32%",   right: "-2%", delay: 0.16 },
-  { name: "Zapier",      src: "/assets/tools-logo/zapier.dark.svg",         bottom: "28%",right: "2%",  delay: 0.24 },
-  { name: "OpenAI",      src: "/assets/tools-logo/openai.svg",              bottom: "8%", right: "28%", delay: 0.32 },
-  { name: "Shopify",     src: "/assets/tools-logo/shopify.dark.svg",        bottom: "2%", left: "36%",  delay: 0.12 },
-  { name: "Gemini",      src: "/assets/tools-logo/gemini.dark.svg",         bottom: "24%",left: "0%",   delay: 0.20 },
-  { name: "Anthropic",   src: "/assets/tools-logo/anthropic.dark.svg",      top: "35%",   left: "-2%",  delay: 0.28 },
-  { name: "Perplexity",  src: "/assets/tools-logo/perplexity.dark.svg",     top: "14%",   left: "8%",   delay: 0.04 },
+  { name: "n8n",         src: "/assets/tools-logo/n8n.light.svg",           top: "4%",    left: "30%",  delay: 0 },
+  { name: "Claude Code", src: "/assets/tools-logo/claudecode.light.svg",    top: "10%",   right: "8%",  delay: 0.08 },
+  { name: "Notion",      src: "/assets/tools-logo/notion.light.svg",        top: "32%",   right: "-2%", delay: 0.16 },
+  { name: "Zapier",      src: "/assets/tools-logo/zapier.light.svg",        bottom: "28%",right: "2%",  delay: 0.24 },
+  { name: "OpenAI",      src: "/assets/tools-logo/openai.light.svg",        bottom: "8%", right: "28%", delay: 0.32 },
+  { name: "Shopify",     src: "/assets/tools-logo/shopify.light.svg",       bottom: "2%", left: "36%",  delay: 0.12 },
+  { name: "Gemini",      src: "/assets/tools-logo/gemini.light.svg",        bottom: "24%",left: "0%",   delay: 0.20 },
+  { name: "Anthropic",   src: "/assets/tools-logo/anthropic.light.svg",     top: "35%",   left: "-2%",  delay: 0.28 },
+  { name: "Perplexity",  src: "/assets/tools-logo/perplexity.light.svg",    top: "14%",   left: "8%",   delay: 0.04 },
 ];
 
 // Chip with WHITE background + dark text so the label is visible on the orb-gradient bg.
@@ -193,7 +194,7 @@ export function IntegrationSphere() {
                 aria-label={revealed ? "Click to hide integrations" : "Click to explore integrations"}
               >
                 <img
-                  src="/assets/logo/jva-orb-svg.svg"
+                  src="/assets/logo/jva-orb-cutout.png"
                   alt="JVA integration hub"
                   className="w-full h-full object-contain select-none"
                   style={{ filter: "drop-shadow(0 30px 60px rgba(15,10,30,0.50)) drop-shadow(0 0 80px rgba(155,111,208,0.45))" }}

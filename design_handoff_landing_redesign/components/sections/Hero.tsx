@@ -122,16 +122,22 @@ export function Hero() {
             who are done doing everything manually.
           </motion.p>
 
-          {/* CTA */}
-          <motion.div variants={itemVariants} className="flex justify-center mt-2">
+          {/* CTA pair */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mt-2">
             <Button
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              variant="heroCta"
               size="lg"
             >
               Submit Your Workflow Idea →
+            </Button>
+            <Button
+              href="#services"
+              variant="outline"
+              size="lg"
+            >
+              See services
             </Button>
           </motion.div>
         </motion.div>
