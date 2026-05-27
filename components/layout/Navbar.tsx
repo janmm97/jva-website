@@ -9,7 +9,7 @@ const BOOKING_URL = "https://form.typeform.com/to/kVhRsNfy";
 const navLinks = [
   { label: "Home",     href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
+  { label: "Projects", href: "/projects" },
   { label: "About",    href: "/about" },
 ];
 
@@ -19,38 +19,36 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    /* Outer wrapper — provides top padding so pill floats above content */
     <div className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav
         className={`mx-auto max-w-6xl transition-all duration-300 rounded-2xl border ${
           scrolled
-            ? "bg-jva-dark/90 backdrop-blur-xl border-jva-purple/30 shadow-lg shadow-black/30"
-            : "bg-jva-dark/70 backdrop-blur-lg border-jva-purple/20"
+            ? "bg-[#1F192F]/90 backdrop-blur-xl border-[rgba(196,181,232,0.18)] shadow-lg shadow-black/30"
+            : "bg-[#1F192F]/55 backdrop-blur-lg border-[rgba(196,181,232,0.10)]"
         }`}
       >
         <div className="flex items-center justify-between px-5 h-[60px]">
-
-          {/* Logo */}
           <a href="/" className="flex-shrink-0">
             <img
               src="/assets/logo/jva-logo-primary-reverse-svg.svg"
               alt="JVA"
-              className="h-10 w-auto"
+              className="h-9 w-auto"
             />
           </a>
 
-          {/* Desktop nav links — centered */}
+          {/* Desktop nav links */}
           <ul className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="px-4 py-2 text-sm text-jva-lavender/80 hover:text-white rounded-lg hover:bg-jva-purple/20 transition-all duration-150"
+                  className="px-4 py-2 text-sm text-jva-lavender/80 hover:text-white rounded-lg hover:bg-[rgba(196,181,232,0.10)] transition-all duration-150"
                 >
                   {link.label}
                 </a>
@@ -58,7 +56,7 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Right — CTA */}
+          {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Button
               href={BOOKING_URL}
@@ -66,7 +64,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               size="sm"
             >
-              Book a call
+              Contact
             </Button>
           </div>
 
@@ -83,13 +81,13 @@ export function Navbar() {
 
         {/* Mobile drawer */}
         {menuOpen && (
-          <div className="md:hidden border-t border-jva-purple/20 px-5 py-5">
+          <div className="md:hidden border-t border-[rgba(196,181,232,0.12)] px-5 py-5">
             <ul className="flex flex-col gap-1 mb-5">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="block px-3 py-2.5 text-jva-lavender/80 hover:text-white hover:bg-jva-purple/20 rounded-lg transition-all duration-150 text-sm"
+                    className="block px-3 py-2.5 text-jva-lavender/80 hover:text-white hover:bg-[rgba(196,181,232,0.10)] rounded-lg transition-all duration-150 text-sm"
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.label}
@@ -103,7 +101,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="w-full justify-center"
             >
-              Book a call
+              Contact
             </Button>
           </div>
         )}
