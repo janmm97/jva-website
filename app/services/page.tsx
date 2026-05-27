@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
 import { Pricing } from "@/components/sections/Pricing";
-import { SocialProof } from "@/components/sections/SocialProof";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
@@ -36,7 +35,6 @@ export default function ServicesPage() {
       <Services />
       <Process />
       <Pricing />
-      <SocialProof />
       <FinalCTA />
     </main>
   );
